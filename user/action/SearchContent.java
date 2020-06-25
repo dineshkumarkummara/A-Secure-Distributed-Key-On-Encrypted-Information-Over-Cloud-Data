@@ -102,8 +102,6 @@ public class SearchContent extends HttpServlet
 						
 						if(count==0)
 						{
-							
-							
 							fileno=rs.getString(1);
 							keywordNO=rs.getString(2);
 							String rankvalue1=rs.getString(3);
@@ -162,9 +160,6 @@ public class SearchContent extends HttpServlet
 							}
 						}
 						
-						
-		
-						
 					recordCount++;
 					}
 					
@@ -190,20 +185,9 @@ public class SearchContent extends HttpServlet
 							recordCount++;	
 						
 						}
-						
-												
-					
-					
-					
 					
 				}
-				
-				
-				
-				
-				
-				
-				
+		
 				System.out.println("Count :"+recordCount);
 				
 				if(recordCount==0)
@@ -292,11 +276,7 @@ public class SearchContent extends HttpServlet
 						hash4=msrch.searchKey(st[i], urank);
 						count++;
 					}
-				
-				
-				
-				
-				
+		
 				
 			}
 			int count1=0;
@@ -336,7 +316,7 @@ public class SearchContent extends HttpServlet
 				}else if(count1==1)
 				{
 					
-					
+	
 					if(hashTemp.isEmpty() || hash2.isEmpty())
 					{
 						break;
@@ -399,8 +379,7 @@ public class SearchContent extends HttpServlet
 							double d2=hash4.get(key1);
 							double d3=d1+d2;
 							
-							hashTemp3.put(key1, d3);
-							
+							hashTemp3.put(key1, d3);				
 							
 						}
 				}
@@ -411,12 +390,7 @@ public class SearchContent extends HttpServlet
 				
 				
 			}
-			
-			
-			
-			
-			
-			
+
 			if(tcount==0)
 			{
 				System.out.println("Te+++++++++++++++++++++++++=");
@@ -424,8 +398,6 @@ public class SearchContent extends HttpServlet
 				rd.forward(req,resp);
 			}else
 			{
-				
-				
 				if(st.length==2)
 				{
 					
@@ -444,8 +416,6 @@ public class SearchContent extends HttpServlet
 			            sb.append(entry.getKey()+"~"+entry.getValue()+"@");
 			            
 			        }
-					
-					
 					
 				}else if(st.length==3)
 				{
@@ -503,43 +473,20 @@ public class SearchContent extends HttpServlet
 			            
 			        }
 				}
-				
-				
-				
-				
-				
+			
 				req.setAttribute("sb", sb.toString());
 				rd = req.getRequestDispatcher("/JSP/User/matched.jsp");
 				rd.forward(req,resp);
 				
 				
 			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+				
 		}else
 		{
 			System.out.println("Te+++++++++++++++++++++++++=");
 			rd = req.getRequestDispatcher("/JSP/User/search_content.jsp?no=2");
 			rd.forward(req,resp);
 		}
-		
-		
 			
-		
-		
-		
-	}
-	
-	
-	
-	
+	}	
 }
